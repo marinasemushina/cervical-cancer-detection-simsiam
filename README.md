@@ -1,0 +1,35 @@
+# Detection of Atypical Cells in Cervical Cytology using SimSiam Pretraining and Test-Time Adaptation
+
+This repository contains the code and experiments for my dissertation research conducted at Moscow Institute of Physics and Technology (MIPT). The project explores a two-stage approach to improve the detection of atypical cells in ThinPrep cytology images.
+
+##  Key Features
+
+- **Self-Supervised Pretraining:** SimSiam on unlabeled cytology patches (ResNet-50).
+- **Object Detection:** Faster R-CNN with FPN, fine-tuned for small cell detection.
+- **Test-Time Augmentation:** Adaptive TTA with dynamic threshold adjustment based on running statistics.
+- **Medical Imaging:** Applied to the public HMCHH-TCT-CellDet dataset (8037 images, 15761 annotated cells).
+- **Performance:** +1.71% mAP@0.5 improvement over ImageNet baseline (63.70% → 65.41%).
+
+##  Research Background
+
+This work was motivated by the limitations of traditional cytology screening (subjectivity, labor-intensiveness) and the need for robust AI systems that can handle domain shifts in clinical practice. The approach combines two modern paradigms:
+
+1. **Self-Supervised Learning (SSL)** to learn meaningful representations from unlabeled medical images.
+2. **Test-Time Adaptation (TTA)** to adjust model predictions on-the-fly without retraining.
+
+##  Main Results
+
+| Method | mAP@0.5 (Test) | Precision | Recall | F1-Score |
+|--------|----------------|-----------|--------|----------|
+| Baseline (ImageNet) | 63.70% | 0.639 | 0.607 | 0.623 |
+| SimSiam Pretraining | 64.92% | 0.652 | 0.619 | 0.635 |
+| SimSiam + Adaptive TTA | **65.41%** | - | - | - |
+
+The adaptive TTA method, which dynamically adjusts the confidence threshold based on accumulated prediction statistics, provided an additional +0.49% boost.
+
+##  Quick Start
+
+```bash
+git clone https://github.com/marinasemushina/cervical-cancer-detection-simsiam
+cd cervical-cancer-detection-simsiam
+pip install -r requirements.txt
