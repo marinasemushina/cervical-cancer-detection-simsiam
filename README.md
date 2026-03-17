@@ -33,7 +33,7 @@ The adaptive TTA method, which dynamically adjusts the confidence threshold base
 git clone https://github.com/marinasemushina/cervical-cancer-detection-simsiam
 cd cervical-cancer-detection-simsiam
 pip install -r requirements.txt
-
+```
 
 Download the dataset from figshare and place it in data/raw/.
 
