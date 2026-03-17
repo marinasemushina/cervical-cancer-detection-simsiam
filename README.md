@@ -59,5 +59,7 @@ License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 Contact
+
 Semushina Marina - semushinamarina@yandex.ru
+
 Moscow Institute of Physics and Technology (MIPT)
